@@ -28,7 +28,7 @@ if ($result->rowCount() > 0) {
     echo "<h3>This a list of Firewall rules stored in your demo db. </h3>";
     echo "<table>\n";    
 // Output data of each row
-    while($row = $result->fetch_assoc()) {
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       echo "\t<tr>\n";
       foreach ($row as $col_value) {
           print "\t\t<td>$col_value</td>\n";
