@@ -12,8 +12,8 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Simplephp</h1>
-      <h2 class="project-tagline">This is a simple PHP site with connection to Mysql Server</h2>
-      <a href="https://github.com/julianfoi/SimplePHP" class="btn">View on GitHub</a>
+      <h2 class="project-tagline">This is a Simple PHP site connected to your Mysql Server (LAMP)</h2>
+      <a href="./test-db.php" class="btn">Test Your DB here...</a>
     </section>
 
     <section class="main-content">
@@ -22,15 +22,14 @@
 <p> Welcome to Simple PHP </p>
 
 <h3>
-<p> Congratulations, This is your PHP/Apache server conntected to Mysql Server </p>
-<?php include_once("./config/linked-db-config.php") ?>
-<?php 
-   master = DB::getConnection('write')
-   slave = DB::getConnection('read')
-?>
+<p> Congratulations, This is your PHP/Apache conntected to Mysql Server </p>
+
 </h3>
 <h3>
+<!--
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors
+Julian Ortiz 
+--!>
 </h3>
 
     </section>
