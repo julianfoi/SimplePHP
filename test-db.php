@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Customers</title>
+    <title>Firewall Rules Stored in DB</title>
     <style>
       table, th, td {
         border: 1px solid black;
@@ -22,9 +22,12 @@ $conn = DB::getConnection('read');
 $sql = "SELECT * FROM fwrules";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    echo "<table>\n";
-    // Output data of each row
+if ($result->rowCount() > 0) {
+    echo "<h2>You have successfully deployed LAMP. </h2>";
+    echo "<br>";
+    echo "<h3>This a list of Firewall rules stored in your demo db. </h3>";
+    echo "<table>\n";    
+// Output data of each row
     while($row = $result->fetch_assoc()) {
       echo "\t<tr>\n";
       foreach ($row as $col_value) {
