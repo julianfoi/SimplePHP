@@ -40,7 +40,7 @@ catch (Exception $err) {
         }
     }
     $trace .= '</table>';
-   echo '<br /><br /><br /><h2>[</b> DB Connection Error ' . strval($err->getCode()) . '<b>]</h2></legend> <table border="0"><tr><td align="right"><b><u>Message:</u></b></td><td><i>' . $err->getMessage() . '</i></td></tr><tr><td align="right"><b><u>Code:</u></b></td><td><i>' . strval($err->getCode()) . '</i></td></tr><tr><td align="right"><b><u>File:</u></b></td><td><i>' . $err->getFile() . '</i></td></tr><tr><td align="right"><b><u>Line:</u></b></td><td><i>' . strval($err->getLine()) . '</i></td></tr><tr><td align="right"><b><u>Trace:</u></b></td><td><br /><br />' . $trace . '</td></tr></table>';    
+   echo '<br /><br /><br /><h2>[</b> DB Connection Error ' . strval($err->getCode()) . '<b>]</h2> <table border="0"><tr><td align="right"><b><u>Message:</u></b></td><td><i>' . $err->getMessage() . '</i></td></tr><tr><td align="right"><b><u>Code:</u></b></td><td><i>' . strval($err->getCode()) . '</i></td></tr><tr><td align="right"><b><u>File:</u></b></td><td><i>' . $err->getFile() . '</i></td></tr><tr><td align="right"><b><u>Line:</u></b></td><td><i>' . strval($err->getLine()) . '</i></td></tr><tr><td align="right"><b><u>Trace:</u></b></td><td><br /><br />' . $trace . '</td></tr></table>';    
 }    
 
 if ($result_row > 0) {
@@ -58,7 +58,7 @@ if ($result_row > 0) {
     }
     echo "</table>";
 } else {
-    echo "<h2> 0 results </h2>";
+    echo "<h3> 0 results </h3>";
 }
 
 ?>
