@@ -17,13 +17,13 @@
 <body>
 <?php
 include_once("./config/linked-db-config.php");
-result_row=0;
+$result_row=0;
 try {
    $conn = DB::getConnection('read');
    // Perform SQL query
    $sql = "SELECT * FROM fwrules";
    $result = $conn->query($sql);
-   result_row = result->rowCount();
+   $result_row = $result->rowCount();
 }
 catch (PDOException $err) {
 // Catch Expcetions from the above code for our Exception Handling
@@ -43,7 +43,7 @@ catch (PDOException $err) {
     echo '<br /><br /><br /><font face="Verdana"><center><fieldset style="width: 66%; border: 4px solid white; background: black;"><legend><b>[</b>PHP PDO Error ' . strval($err->getCode()) . '<b>]</b></legend> <table border="0"><tr><td align="right"><b><u>Message:</u></b></td><td><i>' . $err->getMessage() . '</i></td></tr><tr><td align="right"><b><u>Code:</u></b></td><td><i>' . strval($err->getCode()) . '</i></td></tr><tr><td align="right"><b><u>File:</u></b></td><td><i>' . $err->getFile() . '</i></td></tr><tr><td align="right"><b><u>Line:</u></b></td><td><i>' . strval($err->getLine()) . '</i></td></tr><tr><td align="right"><b><u>Trace:</u></b></td><td><br /><br />' . $trace . '</td></tr></table></fieldset></center></font>';
 }    
 
-if (result_row > 0) {
+if ($result_row > 0) {
     echo "<h2>You have successfully deployed LAMP. </h2>";
     echo "<br>";
     echo "<h3>This a list of Firewall rules stored in your demo db. </h3>";
