@@ -25,7 +25,7 @@ try {
    $result = $conn->query($sql);
    $result_row = $result->rowCount();
 }
-catch (PDOException $err) {
+catch (Exception $err) {
 // Catch Expcetions from the above code for our Exception Handling
     $trace = '<table border="0">';
     foreach ($err->getTrace() as $a => $b) {
@@ -40,7 +40,7 @@ catch (PDOException $err) {
         }
     }
     $trace .= '</table>';
-    echo '<br /><br /><br /><font face="Verdana"><center><fieldset style="width: 66%; border: 4px solid white; background: black;"><legend><b>[</b>PHP PDO Error ' . strval($err->getCode()) . '<b>]</b></legend> <table border="0"><tr><td align="right"><b><u>Message:</u></b></td><td><i>' . $err->getMessage() . '</i></td></tr><tr><td align="right"><b><u>Code:</u></b></td><td><i>' . strval($err->getCode()) . '</i></td></tr><tr><td align="right"><b><u>File:</u></b></td><td><i>' . $err->getFile() . '</i></td></tr><tr><td align="right"><b><u>Line:</u></b></td><td><i>' . strval($err->getLine()) . '</i></td></tr><tr><td align="right"><b><u>Trace:</u></b></td><td><br /><br />' . $trace . '</td></tr></table></fieldset></center></font>';
+   echo '<br /><br /><br /><h2>[</b> DB Connection Error ' . strval($err->getCode()) . '<b>]</h2></legend> <table border="0"><tr><td align="right"><b><u>Message:</u></b></td><td><i>' . $err->getMessage() . '</i></td></tr><tr><td align="right"><b><u>Code:</u></b></td><td><i>' . strval($err->getCode()) . '</i></td></tr><tr><td align="right"><b><u>File:</u></b></td><td><i>' . $err->getFile() . '</i></td></tr><tr><td align="right"><b><u>Line:</u></b></td><td><i>' . strval($err->getLine()) . '</i></td></tr><tr><td align="right"><b><u>Trace:</u></b></td><td><br /><br />' . $trace . '</td></tr></table>';    
 }    
 
 if ($result_row > 0) {
